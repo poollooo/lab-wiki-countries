@@ -1,55 +1,10 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import countries from '../countries.json'
-
-// const CountryDetails = () => {
-//     const navigate = useNavigate()
-
-//     const [countryInfo, setCountryInfo] = useState(null)
-
-//     countries.map((country, index) => {
-//         setCountryInfo({country })
-//     })
-//     const countryName = useParams().countryName
-//     console.log(countryName)
-//     const alpha3Code = 
-//     console.log(countryName, commonName)
-//     setCountryInfo({ countryName, commonName })
-
-//     // useEffect(() => {
-//     //     const url = `https://restcountries.com/v3.1/alpha/${cca2}`
-
-//     //     // let's use an API to get info about this country
-//     //     axios
-//     //         .get(url)
-//     //         .then((response) => {
-//     //             const capital = response.data[0].capital[0]
-//     //             const commonName = response.data[0].name.common
-//     //             console.log(capital, commonName)
-//     //             setCountryInfo({ capital, commonName })
-//     //         })
-//     //         .catch(() => {
-//     //             // redirect the user to a page with a useful list
-//     //             navigate('/countries')
-//     //         })
-//     // }, [cca2, navigate])
-
-//     if (!countryInfo) {
-//         return <p>I AM STILL LOADING</p>
-//     }
-
-//     return (
-//         <p>
-//             {countryInfo.commonName}! Its capital is {countryInfo.capital}!
-//         </p>
-//     )
-// }
-
-// export default CountryDetails
+import { useParams } from 'react-router-dom'
 
 import React from 'react'
 
-const CountryDetails = () => {
+const CountryDetails = ({ getCountryInfo }) => {
+    const { cca2 } = useParams()
+
     return (
         <div className="col-7">
             <h1>France</h1>
